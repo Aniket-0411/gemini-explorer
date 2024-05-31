@@ -46,8 +46,8 @@ if st.session_state.user_name == "":
     user_name = st.text_input("Please enter your name")
     if user_name:
         st.session_state.user_name = user_name
-        initial_prompt = f"Ahoy {st.session_state.user_name}! I be ReX, your trusty assistant on this digital voyage. Let's tackle these tasks together! 🌊⚓️"
-        st.session_state.messages.append({"role": "assistant", "content": initial_prompt})
+        initial_prompt = f"Introduce yourself as Rex AI. Use the emogis to be creative and introduce in pirate speak language. Keep it short below 20-30 words and single paragraph, greet me using {st.session_state.user_name}"
+        llm_function(chat,initial_prompt)
 else:
     # Once the username is provided, display the chat interface
     query = st.chat_input("Type your message here...")
